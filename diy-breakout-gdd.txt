@@ -1,0 +1,22 @@
+								###################################
+								#DIY Breakout Game Design Document#
+								###################################
+
+
+Preliminary steps
+								
+1. Create repo for the project
+2. Clone repo
+3. Create new Unity project inside repo folder
+
+Game description
+
+In the game, a layer of bricks lines the top third of the screen. A ball travels across the screen, bouncing off the top and side walls of the screen. When a brick is hit, the ball bounces away and the brick is destroyed. The player loses a turn when the ball touches the bottom of the screen. To prevent this from happening, the player has a movable paddle to bounce the ball upward, keeping it in play.
+
+Implemented features
+
+
+
+To-Do-List
+
+1. Create game objects in MagicaVoxel.
