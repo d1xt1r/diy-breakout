@@ -39,6 +39,7 @@ Add Highscore functionality
 Main menu, game scene music, hit sounds - maybe different for different bricks, pause music on esc, more?
 
 --- Menu
+Menu should rotate the cube
 Main Menu, Options Menu - should have volume settings, Pause menu during game.
 Choosing betwen standart levels and Infinete bricks
 
