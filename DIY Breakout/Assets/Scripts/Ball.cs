@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
-    public float speed = 10;
+    public float initialBallVelocity = 150;
     Rigidbody ballRigidbody;
+    private bool ballIsLanched; 
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         ballRigidbody = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        ballRigidbody.AddForce(Vector3.down * speed);
+
+        // Launch the ball
+
+        if (Input.GetKeyDown(KeyCode.Space) && ballIsLanched == false) {
+            transform.parent = null;  // To release the ball from the pad
+            ballIsLanched = true; // Ball is  now in play. Pressing space again will not do anything.
+            ballRigidbody.isKinematic = false; // is true by default. Now ball is affected by the physics. If true, the next line will not do anything.
+            ballRigidbody.AddForce(new Vector3(initialBallVelocity, initialBallVelocity, 0));
+        }
 	}
 }
