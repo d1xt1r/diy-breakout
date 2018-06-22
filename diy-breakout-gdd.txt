@@ -15,24 +15,27 @@ In the game, a layer of bricks lines the top third of the screen. A ball travels
 
 Implemented features
 
-
-
-
-Future-To-Do-List
-
 Create playfield, paddle, ball
 Add phisics, colliders to all objects
 Create script for controlling paddle
 Create script for controlling ball
-Tweak ball to bounce off correctly according to where it hit the paddle
+Tweak ball to bounce off correctly according to where it hit the paddle*
+
+Future-To-Do-List
+
 Add bricks 
 Add phisics, colliders for bricks (Bricks must be destroyable)
 Add different types of bricks (1hit brick, 2hit brick, 3hit brick, unbreakable brick, etc)
 Add different colors for different bricks
+
+Paddle and bricks must be instantiated
+
+Create Game Manager script that will manage the state of the game.
+
 Add 2nd ball bouncing between bricks that should be able to destory bricks only when hit the paddle for the first time.
 Add different levels
 Add 2nd type of game - Infinete bricks - bricks will start to go down after certan period of time. - This will be for highscore.
-Add Highscore functionality
+Add Highscore functionality (Game Manager)
 
 --- Sound
 
