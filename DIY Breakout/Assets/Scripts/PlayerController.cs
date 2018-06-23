@@ -25,10 +25,10 @@ public class PlayerController : MonoBehaviour {
         // movement restriction 
 
         if (transform.position.x <= -16.990f) {
-            transform.position = new Vector3(-16.990f, 1.014f, -19.506f);
+            transform.position = new Vector3(-16.990f, 0f, 0f);
         }
         if (transform.position.x >= 16.990f) {
-            transform.position = new Vector3(16.990f, 1.014f, -19.506f);
+            transform.position = new Vector3(16.990f, 0f, 0f);
         }
 	}
 }
