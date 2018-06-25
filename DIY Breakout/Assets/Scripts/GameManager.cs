@@ -62,7 +62,9 @@ public class GameManager : MonoBehaviour {
     public void LoseLife() {
         lives = lives - 1; // if ball falls into dead zone substract 1 from lives
         livesText.text = "Lives: " + lives; // display the text in the UI
-        //Instantiate(deathParticles, createPaddle.transform.position, Quaternion.identity); // instantiate death particles at the position of the pad
+        deathParticles = Instantiate(deathParticles, createPaddle.transform.position, Quaternion.identity); // instantiate death particles at the position of the pad
+        deathParticles.SetActive(true);
+
         Destroy(createPaddle); // destory the pad
         Invoke("CreateNewPaddle", resetDelay); // create new pad
         IsGameOver();
