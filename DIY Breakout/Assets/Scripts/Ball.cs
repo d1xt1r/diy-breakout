@@ -25,4 +25,12 @@ public class Ball : MonoBehaviour {
             ballRigidbody.AddForce(new Vector3(initialBallVelocity, initialBallVelocity, 0));
         }
 	}
+
+    // small displacement of the ball so it cannot go into one-directional loop.
+
+    void OnCollisionEnter() {
+        Vector3 randomDisplacement = new Vector3(Random.Range(0.1f, 0.5f), Random.Range(0.1f, 0.5f));
+        ballRigidbody.velocity = ballRigidbody.velocity + randomDisplacement;
+        print(randomDisplacement);
+    }
 }
