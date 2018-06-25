@@ -58,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1893797898936472}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.23, y: 1.014, z: -19.506}
+  m_LocalPosition: {x: -0.23, y: 1.014, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4285791430281002}
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d0b377a93af5445a1516ee20dbd07b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialBallVelocity: 150
+  initialBallVelocity: 200
 --- !u!135 &135052313747092048
 SphereCollider:
   m_ObjectHideFlags: 1
