@@ -73,7 +73,7 @@ Transform:
   m_GameObject: {fileID: 1934320629255264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.029999986, y: 1.84, z: 0.065999985}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_Children: []
   m_Father: {fileID: 4238887157110918}
   m_RootOrder: 0
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d0b377a93af5445a1516ee20dbd07b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialBallVelocity: 200
+  initialBallVelocity: 160
 --- !u!135 &135052313747092048
 SphereCollider:
   m_ObjectHideFlags: 1
