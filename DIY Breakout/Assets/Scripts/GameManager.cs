@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance = null;
 
-    public int lives = 3;
-    public int bricks = 28;
+    public int lives;
+    public int bricks;
     public float resetDelay = 1f;
     public Text livesText;
+    public Text bricksText;
     public GameObject gameOver;// game over text from the inspectpr
     public GameObject youWon; // you won text from the from the inspector 
     public GameObject bricksPrefab; // bricks prefab from the inspector 
@@ -20,8 +22,17 @@ public class GameManager : MonoBehaviour {
 
     private GameObject createPaddle; // variable for instantiate the paddle
 
+    public AudioClip hitSound;
+    public AudioClip levelCompleteSound;
+    AudioSource audioSource;
+
     // Use this for initialization
     void Awake () {
+
+        audioSource = GetComponent<AudioSource>();
+        GetComponent<AudioSource>().playOnAwake = false;
+        livesText.text = "Lives: " + lives.ToString(); // display the text in the UI
+        bricksText.text = "Bricsk left: " + bricks.ToString();
 
         // Singleton Pattern. 
 
@@ -48,6 +59,7 @@ public class GameManager : MonoBehaviour {
 
     void NoMoreBricks() {
         if(bricks < 1) {
+            audioSource.PlayOneShot(levelCompleteSound);
             youWon.SetActive(true);
             Time.timeScale = .10f;
             Invoke("ResetGame", resetDelay);
@@ -61,7 +73,7 @@ public class GameManager : MonoBehaviour {
 
     public void LoseLife() {
         lives = lives - 1; // if ball falls into dead zone substract 1 from lives
-        livesText.text = "Lives: " + lives; // display the text in the UI
+        livesText.text = "Lives: " + lives.ToString(); // display the text in the UI
         deathParticles = Instantiate(deathParticles, createPaddle.transform.position, Quaternion.identity); // instantiate death particles at the position of the pad
         deathParticles.SetActive(true);
 
@@ -75,7 +87,9 @@ public class GameManager : MonoBehaviour {
     }
 
     public void DestroyBrick() {
-        bricks = bricks - 1;
+        audioSource.PlayOneShot(hitSound);
+        bricks = bricks - 1; // First you need to substract the bircks
+        bricksText.text = "Bricsk left: " + bricks.ToString(); // then to display them.
         NoMoreBricks();
     }
 }
