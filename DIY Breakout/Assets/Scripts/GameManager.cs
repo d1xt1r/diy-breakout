@@ -18,9 +18,11 @@ public class GameManager : MonoBehaviour {
     public GameObject youWon; // you won text from the from the inspector 
     public GameObject bricksPrefab; // bricks prefab from the inspector 
     public GameObject paddlePrefab; // paddle prefab from the inspector 
+    public GameObject levelCompletedParticles; // level completed particles
     public GameObject deathParticles; // death particles from the inspector
-
+    
     private GameObject createPaddle; // variable for instantiate the paddle
+    private GameObject createBricks;
 
     public AudioClip hitSound;
     public AudioClip levelCompleteSound;
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour {
 
     public void InstantiateObjectsForFirstTime() {
         createPaddle = (GameObject)Instantiate(paddlePrefab, transform.position, Quaternion.identity); // Instantiate the paddle at 0,0,0 (becase GameManager is at 0,0,0) with no rotation and cast it as a game object. Casting is needed because Instantiate creates an item of type 'Object', not 'GameObject'. To access the extra features of the item, it needs to be upcasted to GameObject.
-        Instantiate(bricksPrefab, transform.position, Quaternion.identity);
+        createBricks = Instantiate(bricksPrefab, transform.position, Quaternion.identity);
     }
 
     void IsGameOver() {
@@ -61,8 +63,10 @@ public class GameManager : MonoBehaviour {
         if(bricks < 1) {
             audioSource.PlayOneShot(levelCompleteSound);
             youWon.SetActive(true);
+            createPaddle.SetActive(false);
             Time.timeScale = .10f;
-            Invoke("ResetGame", resetDelay);
+            Invoke("LoadNextLevel", .5f);
+            levelCompletedParticles.SetActive(true);
         }
     }
 
@@ -92,4 +96,17 @@ public class GameManager : MonoBehaviour {
         bricksText.text = "Bricsk left: " + bricks.ToString(); // then to display them.
         NoMoreBricks();
     }
+
+    void LoadNextLevel() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the next scene
+        Time.timeScale = 1f;
+    }
+
+    private void Update() {
+            if (Input.GetKeyDown(KeyCode.P)) {
+            bricks = 1;
+        }
+    }
 }
+
+  
