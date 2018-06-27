@@ -31,6 +31,5 @@ public class Ball : MonoBehaviour {
     void OnCollisionEnter() {
         Vector3 randomDisplacement = new Vector3(Random.Range(0.1f, 0.5f), Random.Range(0.1f, 0.5f));
         ballRigidbody.velocity = ballRigidbody.velocity + randomDisplacement;
-        print(randomDisplacement);
     }
 }
