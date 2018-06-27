@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Brick
+  - OneHitBrick
+  - TwoHitBrick
+  - ThreeHitBrick
   layers:
   - Default
   - TransparentFX
