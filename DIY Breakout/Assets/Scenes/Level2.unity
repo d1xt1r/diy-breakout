@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0012354718, g: 0.0012382858, b: 0.0012354718, a: 1}
+  m_IndirectSpecularColor: {r: 0.0018380446, g: 0.0018236986, b: 0.0018380446, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1162,7 +1162,7 @@ MonoBehaviour:
   paddlePrefab: {fileID: 1893797898936472, guid: c7f99eddf76c9964085aef980e209512,
     type: 2}
   deathParticles: {fileID: 1460002941}
-  hitSound: {fileID: 8300000, guid: 0f7ef80875267614697f5ba62a529d9a, type: 3}
+  hitSound: {fileID: 8300000, guid: 5f773aad05bfbef4885c3fc7327b6226, type: 3}
   levelCompleteSound: {fileID: 8300000, guid: c63bd0d1fff654c47a76991a86f3b298, type: 3}
 --- !u!4 &1917041375
 Transform:
